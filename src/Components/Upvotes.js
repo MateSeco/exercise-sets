@@ -1,21 +1,29 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from "react";
 
 function Upvotes(props) {
-    const [upvotes, setUpvotes] = useState(false);
+  const [upvotes, setUpvotes] = useState(false);
 
-    function addVote() {
-        setUpvotes(prevState => !prevState);
-    }
+  function addVote() {
+    setUpvotes((prevState) => !prevState);
+  }
 
-    return (
-        <div>
-            {!upvotes && <button type='button' onClick={addVote}>Like</button>}
-            {upvotes && <React.Fragment>
-                <span>You like this</span>
-                <button type='button' onClick={addVote}>Don't like</button>
-            </React.Fragment>}
-        </div>
-    )
+  return (
+    <div>
+      {!upvotes && (
+        <button type="button" onClick={addVote}>
+          Like
+        </button>
+      )}
+      {upvotes && (
+        <React.Fragment>
+          <span>You like this</span>
+          <button type="button" onClick={addVote}>
+            Don't like
+          </button>
+        </React.Fragment>
+      )}
+    </div>
+  );
 }
 
-export default Upvotes
+export default Upvotes;
